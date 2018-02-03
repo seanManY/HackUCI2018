@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Key
-  - Door
   - Wall
   - Wings
+  - Key Door
+  - Switch
   layers:
   - Default
   - TransparentFX

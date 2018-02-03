@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4077544097028532}
   m_Layer: 0
-  m_Name: Door
-  m_TagString: Door
+  m_Name: Key Door
+  m_TagString: Key Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 61053586353068490}
   m_Layer: 0
   m_Name: Colliders
-  m_TagString: Door
+  m_TagString: Key Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
