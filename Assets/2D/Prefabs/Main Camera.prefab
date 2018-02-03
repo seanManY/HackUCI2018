@@ -120,6 +120,7 @@ MonoBehaviour:
   ySmooth: 1
   maxXAndY: {x: 10000, y: 1000}
   minXAndY: {x: -10000, y: 3}
+  cSpeed: 3
 --- !u!124 &124748359458081642
 Behaviour:
   m_ObjectHideFlags: 1

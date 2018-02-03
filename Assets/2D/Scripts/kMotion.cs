@@ -76,13 +76,11 @@ public class kMotion : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Key");
             found = true;
         }
 
         if (col.gameObject.tag == "Door")
         {
-            Debug.Log("Door");
             Destroy(col.transform.parent.gameObject);
             Destroy(this.gameObject);
         }
