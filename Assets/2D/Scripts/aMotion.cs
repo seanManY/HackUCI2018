@@ -10,7 +10,7 @@ public class aMotion : MonoBehaviour
     public int pauseTime = 50;
     public bool right = true;
 
-    private int aPause; //0 = Moving, 1 = Hit Wall, 2 = Hit Door
+    private bool aPause;
     private Vector2 aStart;
     private int pauseCount;
     private int direct;
@@ -20,7 +20,7 @@ public class aMotion : MonoBehaviour
     {
         aStart = this.gameObject.transform.position;
         pauseCount = 0;
-        aPause = 0;
+        aPause = false;
         if(right)
         {
             direct = 1;
@@ -34,7 +34,7 @@ public class aMotion : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        if (aPause == 0)
+        if (!aPause)
         {
             this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x + aSpeed * direct / 50f, this.gameObject.transform.position.y);
         }
@@ -42,15 +42,14 @@ public class aMotion : MonoBehaviour
         {
             pauseCount++;
 
-            if (aPause == 2 && pauseCount < 0)
+            if(pauseCount < 0)
             {
-                    this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x + aSpeed * direct / 50f, this.gameObject.transform.position.y);
+                this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x + aSpeed * direct / 50f, this.gameObject.transform.position.y);
             }
-
             else if (pauseCount > pauseTime)
             {
                 this.gameObject.transform.position = aStart;
-                aPause = 0;
+                aPause = false;
                 pauseCount = 0;
             }
         }
@@ -60,13 +59,14 @@ public class aMotion : MonoBehaviour
     {
         if(col.gameObject.tag == "Wall")
         {
-            aPause = 1;
+            pauseCount = pauseCount - 3;
+            aPause = true;
         }
 
         if (col.gameObject.tag == "Door")
         {
             pauseCount = pauseCount - 5;
-            aPause = 2;
+            aPause = true;
         }
 
             if (col.gameObject.tag == "Player")
