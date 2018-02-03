@@ -79,7 +79,7 @@ public class kMotion : MonoBehaviour
             found = true;
         }
 
-        if (col.gameObject.tag == "Door")
+        if (col.gameObject.tag == "Key Door")
         {
             Destroy(col.transform.parent.gameObject);
             Destroy(this.gameObject);

@@ -63,13 +63,19 @@ public class aMotion : MonoBehaviour
             aPause = true;
         }
 
-        if (col.gameObject.tag == "Door")
+        if (col.gameObject.tag == "Key Door")
         {
             pauseCount = pauseCount - 5;
             aPause = true;
         }
 
-            if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Switch Door")
+        {
+            pauseCount = pauseCount - 3;
+            aPause = true;
+        }
+
+        if (col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
         }
