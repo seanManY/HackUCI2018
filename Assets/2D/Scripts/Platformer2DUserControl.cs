@@ -11,6 +11,8 @@ namespace UnityStandardAssets._2D
         private bool m_Jump;
 
         private bool dash;
+        private int maxDash   = 5;
+        private int dashCount = 0;
         
 
         private void Awake()
@@ -44,8 +46,17 @@ namespace UnityStandardAssets._2D
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             // Pass all parameters to the character control script.
             m_Character.Move(h, crouch, m_Jump, dash);
+            if(dash && (dashCount < maxDash))
+            {
+                dashCount++;
+            }
+            else
+            {
+                dash = false;
+                dashCount = 0;
+            }
+            
             m_Jump = false;
-            dash = false;
         }
     }
 }
