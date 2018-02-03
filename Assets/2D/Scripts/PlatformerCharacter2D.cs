@@ -21,6 +21,19 @@ namespace UnityStandardAssets._2D
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
         private bool canDoublejump = false;
+        private bool canDash = true;
+        private float whereToDash = 5f;
+        private bool touchWall = false;
+
+        public int dashTime = 3;
+        public int dashCount = 0;
+
+        private bool dashLoop = false;
+
+        void Start()
+        {
+            
+        }
 
         private void Awake()
         {
@@ -29,6 +42,11 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        }
+
+        void Update()
+        {
+           
         }
 
 
@@ -44,6 +62,7 @@ namespace UnityStandardAssets._2D
                 if (colliders[i].gameObject != gameObject)
                 {
                     m_Grounded = true;
+                    canDash = true;
                 }
                     
                     
@@ -55,7 +74,7 @@ namespace UnityStandardAssets._2D
         }
 
 
-        public void Move(float move, bool crouch, bool jump, bool doubleJump)
+        public void Move(float move, bool crouch, bool jump, bool dash)
         {
             // If crouching, check to see if the character can stand up
             if (!crouch && m_Anim.GetBool("Crouch"))
@@ -107,7 +126,8 @@ namespace UnityStandardAssets._2D
                 m_Rigidbody2D.velocity = new Vector2(0, 0);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 canDoublejump = true;
-
+                
+                
             }
             else if(canDoublejump && jump)
             {
@@ -115,6 +135,50 @@ namespace UnityStandardAssets._2D
                 m_Rigidbody2D.velocity = new Vector2(0, 0);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
+
+            if(!m_Grounded)
+            {
+                Debug.Log(canDash);
+                if(dash && canDash)
+                {
+                    Debug.Log("In the shit");
+                    m_MaxSpeed = 40;
+                    dashLoop = true;
+                }
+                else if(dashLoop)
+                {
+                    Debug.Log("here hrere re ");
+                    m_MaxSpeed = 10;
+                    canDash = false;
+                    dashLoop = false;
+                }
+            }         
+            else 
+            {
+                if (dash && canDash)
+                {
+                    m_MaxSpeed = 40;
+                }   
+                else
+                {
+
+                    m_MaxSpeed = 10;
+
+                }
+
+                //Vector2 whereToDash;
+                //if(m_FacingRight)
+                //    whereToDash.x = transform.position.x + 5;
+                //else
+                //    whereToDash.x = transform.position.x - 5;
+
+                //whereToDash.y = transform.position.y;
+
+
+            }
+            
+
+
         }
 
 
@@ -127,6 +191,21 @@ namespace UnityStandardAssets._2D
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+        }
+
+        void OnCollisionEnter2D(Collision2D coll)
+        {
+           
+        }
+
+        void OnTriggerEnter2D(Collider2D other)
+        {
+           
+        }
+
+        void OnTriggerExit2D(Collider2D other)
+        {
+            
         }
     }
 }
