@@ -13,7 +13,7 @@ namespace UnityStandardAssets._2D
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-        private bool m_Grounded;            // Whether or not the player is grounded.
+        public bool m_Grounded;            // Whether or not the player is grounded.
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator m_Anim;            // Reference to the player's animator component.
@@ -29,6 +29,8 @@ namespace UnityStandardAssets._2D
         public int dashCount = 0;
 
         private bool dashLoop = false;
+
+        private bool hasWings = false;
 
         void Start()
         {
@@ -135,19 +137,23 @@ namespace UnityStandardAssets._2D
                 m_Rigidbody2D.velocity = new Vector2(0, 0);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
+            else if(hasWings && jump)
+            {
+                hasWings = false;
+                m_Rigidbody2D.velocity = new Vector2(0, 0);
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            }
 
             if(!m_Grounded)
             {
                 Debug.Log(canDash);
                 if(dash && canDash)
                 {
-                    Debug.Log("In the shit");
                     m_MaxSpeed = 40;
                     dashLoop = true;
                 }
                 else if(dashLoop)
                 {
-                    Debug.Log("here hrere re ");
                     m_MaxSpeed = 10;
                     canDash = false;
                     dashLoop = false;
@@ -200,7 +206,10 @@ namespace UnityStandardAssets._2D
 
         void OnTriggerEnter2D(Collider2D other)
         {
-           
+           if(other.gameObject.tag == "Wings")
+            {
+                hasWings = true;
+            }
         }
 
         void OnTriggerExit2D(Collider2D other)
