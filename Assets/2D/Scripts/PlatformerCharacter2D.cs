@@ -20,6 +20,8 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
+        private bool canDoublejump = false;
+
         private void Awake()
         {
             // Setting up references.
@@ -40,7 +42,11 @@ namespace UnityStandardAssets._2D
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
+                {
                     m_Grounded = true;
+                }
+                    
+                    
             }
             m_Anim.SetBool("Ground", m_Grounded);
 
@@ -49,7 +55,7 @@ namespace UnityStandardAssets._2D
         }
 
 
-        public void Move(float move, bool crouch, bool jump)
+        public void Move(float move, bool crouch, bool jump, bool doubleJump)
         {
             // If crouching, check to see if the character can stand up
             if (!crouch && m_Anim.GetBool("Crouch"))
@@ -92,9 +98,21 @@ namespace UnityStandardAssets._2D
             // If the player should jump...
             if (m_Grounded && jump && m_Anim.GetBool("Ground"))
             {
+                //m_Grounded && jump && m_Anim.GetBool("Ground")
                 // Add a vertical force to the player.
-                m_Grounded = false;
-                m_Anim.SetBool("Ground", false);
+                // m_Grounded = false;
+
+                //m_Anim.SetBool("Ground", false);
+
+                m_Rigidbody2D.velocity = new Vector2(0, 0);
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                canDoublejump = true;
+
+            }
+            else if(canDoublejump && jump)
+            {
+                canDoublejump = false;
+                m_Rigidbody2D.velocity = new Vector2(0, 0);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }
