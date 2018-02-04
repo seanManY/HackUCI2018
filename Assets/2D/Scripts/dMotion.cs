@@ -22,7 +22,7 @@ public class dMotion : MonoBehaviour
             this.gameObject.transform.position = new Vector2(locat.x, this.gameObject.transform.position.y - .04f);
         }
 
-        if (open && this.gameObject.transform.position.y < locat.y + 4f)
+        if (open && this.gameObject.transform.position.y < locat.y + 8f)
         {
             this.gameObject.transform.position = new Vector2(locat.x, this.gameObject.transform.position.y + .04f);
         }

@@ -22,8 +22,8 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
+  - KeyHole
+  - Door
   - 
   - 
   - 
@@ -51,4 +51,10 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: KeyHole
+    uniqueID: 1540914371
+    locked: 0
+  - name: Door
+    uniqueID: 3369293
     locked: 0
