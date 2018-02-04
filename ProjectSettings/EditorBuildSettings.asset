@@ -7,9 +7,9 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/scenes/Begining.unity
-    guid: 94f14002093e494478526f079309dcbe
+    guid: 3be0f7af8093e4b40804f4001bf2039a
   - enabled: 1
-    path: Assets/scenes/Hub.unity
+    path: Assets/scenes/HUB.unity
     guid: 459c6bc006fa2d7489c73d6b343db896
   - enabled: 1
     path: Assets/scenes/Brain 1.unity
