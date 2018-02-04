@@ -33,6 +33,8 @@ namespace UnityStandardAssets._2D
         private bool hasWings = false;
         private Vector2 prevGrav;
 
+        public GameObject wangs;
+
         void Start()
         {
             prevGrav = Physics2D.gravity;
@@ -148,6 +150,7 @@ namespace UnityStandardAssets._2D
             else if (hasWings && jump)
             {
                 hasWings = false;
+                wangs.gameObject.SetActive(false);
                 m_Rigidbody2D.velocity = new Vector2(0, 0);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
@@ -222,6 +225,7 @@ namespace UnityStandardAssets._2D
             if (other.gameObject.tag == "Wings")
             {
                 hasWings = true;
+                wangs.gameObject.SetActive(true);
             }
         }
 
