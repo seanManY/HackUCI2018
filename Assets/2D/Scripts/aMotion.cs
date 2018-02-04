@@ -71,7 +71,7 @@ public class aMotion : MonoBehaviour
 
         if (col.gameObject.tag == "Switch Door")
         {
-            pauseCount = pauseCount - 3;
+            pauseCount = pauseCount - 1;
             aPause = true;
         }
 

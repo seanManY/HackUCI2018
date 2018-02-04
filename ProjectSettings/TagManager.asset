@@ -9,6 +9,8 @@ TagManager:
   - Wings
   - Key Door
   - Switch
+  - Crate
+  - Switch Door
   layers:
   - Default
   - TransparentFX
