@@ -88,6 +88,11 @@ namespace UnityStandardAssets._2D
                 }
             }
 
+            if(crouch && !m_Grounded)
+            {
+               // m_Rigidbody2D
+            }
+
             // Set whether or not the character is crouching in the animator
             m_Anim.SetBool("Crouch", crouch);
 
@@ -146,7 +151,7 @@ namespace UnityStandardAssets._2D
 
             if(!m_Grounded)
             {
-                Debug.Log(canDash);
+               
                 if(dash && canDash)
                 {
                     m_MaxSpeed = 40;
