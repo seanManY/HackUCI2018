@@ -11,6 +11,7 @@ public class kMotion : MonoBehaviour
     public Vector2 maxXAndY; // The maximum x and y coordinates the camera can have.
     public Vector2 minXAndY; // The minimum x and y coordinates the camera can have.
     public float cSpeed = 1f; // Camera Speed
+    public dMotion door;
 
     private Transform m_Player; // Reference to the player's transform.
     private bool found = false;
@@ -81,7 +82,8 @@ public class kMotion : MonoBehaviour
 
         if (col.gameObject.tag == "Key Door")
         {
-            Destroy(col.transform.parent.gameObject);
+            door.openDoor();
+            //Destroy(col.transform.parent.gameObject);
             Destroy(this.gameObject);
         }
     }

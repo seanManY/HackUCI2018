@@ -7,6 +7,8 @@ public class sPress : MonoBehaviour
     private Vector2 locat;
     private bool pressed;
 
+    public dMotion door;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -33,6 +35,7 @@ public class sPress : MonoBehaviour
         if (col.gameObject.tag == "Player" || col.gameObject.tag == "Crate")
         {
             pressed = true;
+            door.openDoor();
         }
     }
 
@@ -41,6 +44,7 @@ public class sPress : MonoBehaviour
         if (col.gameObject.tag == "Player" || col.gameObject.tag == "Crate")
         {
             pressed = false;
+            door.closeDoor();
         }
     }
 }
