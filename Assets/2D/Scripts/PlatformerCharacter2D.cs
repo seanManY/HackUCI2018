@@ -93,7 +93,7 @@ namespace UnityStandardAssets._2D
             if (crouch && !m_Grounded)
             {
                 this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x,
-                                                                 this.gameObject.transform.position.y - 1);
+                                                                 this.gameObject.transform.position.y - .5f);
             }
 
             // Set whether or not the character is crouching in the animator
