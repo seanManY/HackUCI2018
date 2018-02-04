@@ -11,6 +11,7 @@ TagManager:
   - Switch
   - Crate
   - Switch Door
+  - MovePlat
   layers:
   - Default
   - TransparentFX

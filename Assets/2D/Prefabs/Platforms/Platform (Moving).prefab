@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114695918400614070}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: MovePlat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114626375793373482}
   m_Layer: 0
   m_Name: Platform (Moving)
-  m_TagString: Untagged
+  m_TagString: MovePlat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566252861319450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.18, y: 0.77, z: 0}
+  m_LocalPosition: {x: -1.6435976, y: 0.13495636, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4284246288751300}
@@ -197,7 +197,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0028898716, y: 0.000000029802322}
   m_SpriteTilingProperty:
@@ -311,7 +311,7 @@ PlatformEffector2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314516428045898}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
