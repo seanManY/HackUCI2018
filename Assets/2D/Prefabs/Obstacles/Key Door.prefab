@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4996987300833356}
+  - component: {fileID: 114430949134100200}
   m_Layer: 0
   m_Name: Key Door
   m_TagString: Key Door
@@ -311,6 +312,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07894616, y: 0.6308952}
   m_EdgeRadius: 0
+--- !u!114 &114430949134100200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069777389926172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba4e5dd0258bfb4d97fb5e87d80555a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212551248930947958
 SpriteRenderer:
   m_ObjectHideFlags: 1
