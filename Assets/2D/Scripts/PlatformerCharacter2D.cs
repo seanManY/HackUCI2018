@@ -31,10 +31,11 @@ namespace UnityStandardAssets._2D
         private bool dashLoop = false;
 
         private bool hasWings = false;
+        private Vector2 prevGrav;
 
         void Start()
         {
-            
+            prevGrav = Physics2D.gravity;
         }
 
         private void Awake()
@@ -65,6 +66,7 @@ namespace UnityStandardAssets._2D
                 {
                     m_Grounded = true;
                     canDash = true;
+                    
                 }
                     
                     
@@ -88,9 +90,10 @@ namespace UnityStandardAssets._2D
                 }
             }
 
-            if(crouch && !m_Grounded)
+            if (crouch && !m_Grounded)
             {
-               // m_Rigidbody2D
+                this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x,
+                                                                 this.gameObject.transform.position.y - 1);
             }
 
             // Set whether or not the character is crouching in the animator
