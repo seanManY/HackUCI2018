@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/scenes/HUB.unity
     guid: 459c6bc006fa2d7489c73d6b343db896
   - enabled: 1
-    path: Assets/scenes/Brain 1.unity
+    path: Assets/scenes/Boss.unity
     guid: 0600b484e34f8114fa753f0bfc6e6542
   - enabled: 1
     path: Assets/scenes/Brain 2.unity
