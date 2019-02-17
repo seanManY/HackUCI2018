@@ -10,10 +10,7 @@ EditorBuildSettings:
     guid: 3be0f7af8093e4b40804f4001bf2039a
   - enabled: 1
     path: Assets/scenes/HUB.unity
-    guid: 459c6bc006fa2d7489c73d6b343db896
-  - enabled: 1
-    path: Assets/scenes/Boss.unity
-    guid: 0600b484e34f8114fa753f0bfc6e6542
+    guid: e0bb532c24be6d54ab52d12fc2fe4aa0
   - enabled: 1
     path: Assets/scenes/Brain 1.unity
     guid: 26227334d6e0fd04b9fa8cc7632e0843
@@ -32,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/Brawn 3.unity
     guid: aa18a984bdb383b4dbbdc6e53d7c8b59
+  - enabled: 1
+    path: Assets/scenes/Boss.unity
+    guid: 0600b484e34f8114fa753f0bfc6e6542
   m_configObjects: {}

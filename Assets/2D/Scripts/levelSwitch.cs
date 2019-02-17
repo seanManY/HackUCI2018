@@ -44,6 +44,11 @@ public class levelSwitch : MonoBehaviour {
                 int brawn = manag.brawnLevel();
                 SceneManager.LoadScene("Brawn " + brawn);
             }
+
+            else if (this.gameObject.transform.position.x == 0)
+            {
+                SceneManager.LoadScene("Boss");
+            }
         }
     }
 }
