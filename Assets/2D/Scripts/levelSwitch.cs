@@ -27,7 +27,7 @@ public class levelSwitch : MonoBehaviour {
             
             if (SceneManager.GetActiveScene().name[0] == 'B')
             {
-                Debug.Log("dis som bull shit");
+                //Debug.Log("dis som bull shit");
                 SceneManager.LoadScene("Hub");
             }
 
