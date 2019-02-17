@@ -6,11 +6,13 @@ public class SpawnPlatform : MonoBehaviour
 {
     public bool isBrain = true;
     public int platNum = 0;
-    public GameManager manag;
+    private GameManager manag;
 
     // Start is called before the first frame update
     void Awake()
     {
+        manag = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
         if(isBrain == true)
         {
             if(manag.brainLevel() < platNum)
