@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/scenes/Boss.unity
     guid: 0600b484e34f8114fa753f0bfc6e6542
   - enabled: 1
+    path: Assets/scenes/Brain 1.unity
+    guid: 26227334d6e0fd04b9fa8cc7632e0843
+  - enabled: 1
     path: Assets/scenes/Brain 2.unity
     guid: aa91b4de5fdeddf4383006dee5dca6be
   - enabled: 1
