@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/Boss.unity
     guid: 0600b484e34f8114fa753f0bfc6e6542
+  - enabled: 1
+    path: Assets/scenes/Bwin.unity
+    guid: 9d2305fff42d63e4291c863ee1588183
   m_configObjects: {}
