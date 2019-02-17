@@ -19,7 +19,7 @@ public class AudioManage : MonoBehaviour
         //    return;
         //}
 
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
 
         foreach(Sound s in sounds)
         {
