@@ -23,9 +23,12 @@ public class levelSwitch : MonoBehaviour {
     {
         if(col.gameObject.tag == "Player")
         {
+            if (SceneManager.GetActiveScene().name == "Boss")
+            {
+                SceneManager.LoadScene("Bwin");
+            }
 
-            
-            if (SceneManager.GetActiveScene().name[0] == 'B')
+            else if (SceneManager.GetActiveScene().name[0] == 'B')
             {
                 //Debug.Log("dis som bull shit");
                 SceneManager.LoadScene("Hub");
